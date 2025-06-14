@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Dashboard Administrador</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <h1>INVERCREDITO</h1>
+        <nav class="navbar">
+            <a href="#" onclick="logout()">Cerrar sesión</a>
+        </nav>
+    </header>
+
+    <!-- Formulario para crear crédito -->
+    <form id="form-crear-credito">
+        <input type="text" id="cliente-nombre" placeholder="Nombre del Cliente" required />
+        <input type="number" id="cliente-monto" placeholder="Monto del Crédito (COP)" required />
+        <button type="submit">Crear Crédito</button>
+    </form>
+
+    <h2>Lista de Créditos</h2>
+    <table class="tabla-creditos">
+        <thead>
+            <tr>
+                <th>Cliente</th>
+                <th>Total Original (COP)</th>
+                <th>Abonos</th>
+                <th>Total Restante (COP)</th>
+                <th>Interés (20%)</th>
+                <th>Ganancia Acumulada</th>
+                <th>Realice el abono</th>
+            </tr>
+        </thead>
+        <tbody id="creditos-list">
+            <!-- Créditos se cargarán aquí -->
+        </tbody>
+        <tfoot>
+            <tr id="total-ganancias">
+                <td colspan="6"><strong>Total Ganancias:</strong></td>
+                <td><span id="total-general">$0</span></td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <script type="module" src="admin.js"></script>
+</body>
+</html>
